@@ -14,7 +14,7 @@ Hope you enjoy!
 
 I wanted to understand neural nets in more detail, to develop an intuitive understanding of what a neural net actually is and how it works.
 
-Having completed the project, the simplest description I can come up with for a neural net, is a set of formulas that continually update a matrix of weights. The solution matrix dimensions can vary based on the problem being solved. Through repetition, assuming we're on a solvable problem, the weights will converge to values that allow the network to tease out relationships between inputs and outputs, in essence "predicting" the outcome, without having any specific logic to understand the problem it is solving beyond the weights.
+Having completed the project, the simplest description I can come up with for a neural net, is a set of formulas that continually update a matrix of weights. The size of the matrix of weights will vary based on the problem being solved. Through repetition, assuming we're on a solvable problem, the weights will hopefully converge to values that allow the network to tease out relationships between inputs and outputs, in essence "predicting" the outcome, without having any specific logic to understand the problem it is solving beyond the weights.
 
 The XOR problem is a great starting point for understanding a neural net. XOR is a simple logical concept meaning "exclusive OR". The entire exercise solves a simple construct: given two inputs, if either one is true, return true; but if both are true, or both are false, return false.
 
