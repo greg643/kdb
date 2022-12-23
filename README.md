@@ -1,4 +1,4 @@
-# kdb projects
+# Kdb Projects
 
 ## Candyland
 
