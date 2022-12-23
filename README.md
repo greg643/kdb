@@ -26,7 +26,7 @@ Using a neural net for this problem is like using a sledgehammer to kill an ant.
 
 What is hopefully much more impressive here, is that this neural net will learn, over a number of iterations, to "predict" XOR results without any specific logic to understand the problem. 
 
-XOR is useful as a learning example for neural nets, precisely because it is overkill: the constrained inputs and outputs mean that we can use a small number of layers, and with severely constrained inputs and outputs, it is easy to verify we have the right answer.
+XOR is useful as a learning example for neural nets, precisely because it is overkill: the constrained inputs and outputs mean that we can use a small number of layers, and with constrained inputs and outputs, checking the outputs is much easier.
 
 In conclusion: the magic of the neural net is that we can see how a collection of formulas, plus repetition, can build upon itself, and "learn" through repetition by updating weghts, to the point where the weights will reflect the same result as a strict logical rule. 
 
@@ -41,7 +41,7 @@ I like to keep my code very simple. My personal rules for coding kdb:
 (2) prefer slightly more verbose implementations;
 (3) all else equal, prefer simpler implementations.
 
-I imagine there are smarter ways to achieve everything I did here, particularly my deus ex machina of skipping iteration with dictionaries, and instead just "setting" global variables to manage the core weight updates, and then "learning" through a simple do command. But in keeping with how I like to code in kdb (use. 
+I imagine there are smarter ways to achieve everything I did here, particularly my deus ex machina of skipping iteration with dictionaries, "setting" global variables to manage the core weight updates, and "learning" through a simple do command. 
 
 If you have a smarter way, let me know!
 
