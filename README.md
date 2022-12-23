@@ -1,4 +1,4 @@
-# Kdb Projects
+# kdb Projects
 
 ## Candyland
 
@@ -10,7 +10,7 @@ Considering the simplicity of Candyland for bigger kids, this can make the game 
 
 Hope you enjoy!
 
-## Neural Net in Kdb
+## Neural Net in kdb
 
 I wanted to understand neural nets in more detail, to develop an intuitive understanding of what a neural net actually is and how it works.
 
