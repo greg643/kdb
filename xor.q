@@ -37,7 +37,6 @@ sigmoid:{1%1+exp neg x};
 x:inputs; /np.array([[0,0,1,1],[0,1,0,1]])
 
 /These are XOR outputs
-
 y:outputs; /np.array([[0,1,1,0]])
 
 /Number of inputs
@@ -55,7 +54,7 @@ m:(count x);
 /Learning rate
 lr:0.1;
 
-/Define random seed for consistent results
+/Define random seed for consistent results - not used in kdb example
 /np.random.seed(2)
 
 /Define weight matrices for neural network
