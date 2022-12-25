@@ -22,7 +22,7 @@ A real world example of this logic: "Mary is either a singer or a poet (meaning,
 
 XOR can be trivially coded as an "if" statement, which makes the use of a neural net humorously complex by comparison - one "and/or" evaluation, solves the XOR problem: if[((x=0)&(y=0))|((x=1)&(y=1));0;1]
 
-Using a neural net for this problem is like using a sledgehammer to kill an ant. To achieve this outcome with a neural net requires thousands of iterations, using much more complex code, to achieve the same thing. In this particular case with the default variables shown, it seems to take around 6,000 repetitions to solve XOR.
+Using a neural net for this problem is like using a sledgehammer to kill an ant. To achieve this outcome with a neural net requires thousands of iterations, using much more complex code, to achieve the same thing. In this particular case with the default variables shown, it seems to take around 7,000 repetitions to solve XOR.
 
 What is hopefully much more impressive here, is that this neural net will learn, over a number of iterations, to "predict" XOR results without any specific logic to understand the problem. 
 
