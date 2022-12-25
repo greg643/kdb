@@ -107,7 +107,7 @@ predict:{[w1;w2;imp]
 
 ///// teach the neural net
 
-do[6000;neuralNet[w1;w2;x;y;lr]];
+do[7000;neuralNet[w1;w2;x;y;lr]];
 
 /// show results
 
