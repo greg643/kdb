@@ -5,39 +5,39 @@
 / Real world example: "Mary is either a singer or a poet (ie, she is not neither, and she is not both)." 
 / This neural net will learn, over a number of iterations, to "predict" that of four possible inputs, and two outputs, the right answer any XOR input.
 / Through repetition, the neural net develops and enhances a system of weights, that ultimately converge on the solution
-/ in this particular case, it seems to take around 6,000 repetitions
-/ This is a great starting example because it is very simple to understand, has just a few inputs with known outputs
-/ Obviously it would be much easier to just program logic to handle XOR inputs, but that's not the point - the point is that we can see how a neural net "learns" to process inputs
-/ This was inspired by a kx tutorial, but that didn't seem to work, so i adapted code from python instead
-/ Example below is fairly primitive use of kdb, the objective here is to do minimal "wrapping" of the code inside my own functions, and instead keep them as close to raw kdb primitives as possible
-/ This example does not use bias units
+/ This is a great starting example because it is very simple to understand, has just a few inputs with known outputs.
+/ Obviously it would be much easier to just program logic to handle XOR inputs, but that's not the point - the point is that we can see how a neural net "learns" to process inputs.
+/ This was inspired by a kx tutorial, but that didn't seem to work, so i adapted code from python instead.
+/ Example below is fairly primitive use of kdb, the objective here is to do minimal "wrapping" of the code inside my own functions, and instead keep them as close to raw kdb primitives as possible.
+/ This example does not use bias units in the neural net.
 
 / Sources:
-/ this is the example i implemented:
+/ This is the example implemented:
 / https://github.com/shayanalibhatti/Coding-neural_network-for-XOR-logic-from-scratch/blob/master/neural_network_xor_logic_from_scratch.ipynb
-/ example provided by kx
+/ Example provided by kx:
 / https://code.kx.com/q/wp/neural-networks/
-/ for some background on XOR
+/ Background on XOR:
 / wikipedia: https://en.wikipedia.org/wiki/Exclusive_or
 
-/notes - we rely a lot on the kdb matrix multiplication function here - mmu/$. mmu observes the following dimensional rules:
-/count y must match:
-/count x where x is a vector
-/count first x where x is a matrix
+/ Notes - we rely a lot on the kdb matrix multiplication function here - mmu/$
+/ mmu observes the following rules:
+/ count y must match:
+/ count x where x is a vector
+/ count first x where x is a matrix
 
-// Inputs and expected target values for XOR problem
 
+/ Here we go - inputs and outputs:
+
+/the combinations of inputs for XOR, renaming to "x" for the python example
 inputs:((0 0f);(0 1f);(1 0f);(1 1f));
-
-outputs:0 1 1 0f;
-
-sigmoid:{1%1+exp neg x};
-
-/These are XOR inputs
 x:inputs; /np.array([[0,0,1,1],[0,1,0,1]])
 
-/These are XOR outputs
+/the XOR results we want the neural net to learn, renaming to "y" for the python example
+outputs:0 1 1 0f;
 y:outputs; /np.array([[0,1,1,0]])
+
+/sigmoid flattening function
+sigmoid:{1%1+exp neg x};
 
 /Number of inputs
 n_x:2;
@@ -54,7 +54,7 @@ m:(count x);
 /Learning rate
 lr:0.1;
 
-/Define random seed for consistent results - not used in kdb example
+/Define random seed for consistent results - not used in kdb example, although we can update the seed
 /np.random.seed(2)
 
 /Define weight matrices for neural network
@@ -62,16 +62,18 @@ lr:0.1;
 w1:{[x;y]x?1.0}[n_x] each til n_h;
 
 /Weight matrix for hidden layer
-/w2 = np.random.rand()   # Weight matrix for output layer
+/w2 = np.random.rand()   / Weight matrix for output layer
 w2:{[x;y]x?1.0}[n_h] each til n_y;
 
-/We will use this list to accumulate losses
+/Use this list to accumulate losses
 losses:();
 
-/learning function
+
+/ learning function
+
 neuralNet:{[w1;w2;x;y;lr]
 
-    /forward propogae
+    /forward propagate
     z1:w1 mmu flip x;
     a1:sigmoid[z1];
     z2:w2 mmu a1;
@@ -92,7 +94,9 @@ neuralNet:{[w1;w2;x;y;lr]
   
 };
 
-/prediction function
+
+/ prediction function
+
 predict:{[w1;w2;imp]
 
     /forward propogate
@@ -105,11 +109,13 @@ predict:{[w1;w2;imp]
 
 };
 
-///// teach the neural net
+
+/ implementation - teach the neural net
 
 do[7000;neuralNet[w1;w2;x;y;lr]];
 
-/// show results
+
+/ show results for each combination of inputs
 
 flip (`gate1`gate2`prediction)!(flip inputs,'raze {[zz] predict[w1;w2;inputs[zz]] }  each 0+til 4 )
 
