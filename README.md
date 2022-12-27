@@ -1,6 +1,6 @@
 # kdb Projects
 
-## Candyland
+# Candyland
 
 Our version of Candyland is several years old and I realized that cards were missing, and some were starting to rip. Before the deck of cards was too far gone, I decided to create a simple program to recreate the deck of candyland cards, and then I realized with a little more effort, I could replace the entire deck with a script, track whose turn it was, and reshuffle the deck when it was exhausted.
 
@@ -10,7 +10,7 @@ Considering the simplicity of Candyland for bigger kids, this can make the game 
 
 Hope you enjoy!
 
-## Neural Net in kdb
+# Neural Net in kdb
 
 I wanted to understand neural nets in more detail, to develop an intuitive understanding of what a neural net actually is and how it works.
 
@@ -62,3 +62,7 @@ https://en.wikipedia.org/wiki/Exclusive_or
 This example relies heavily on kdb matrix multiplication - the "mmu" function. Working with matrices in kdb was new to me with this example, and I found mmu fairly fussy as a first time user. More to learn here.
 
 https://code.kx.com/q/ref/mmu/
+
+# Least Squares Regression
+
+
