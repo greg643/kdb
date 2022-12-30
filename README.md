@@ -1,18 +1,10 @@
 # kdb Projects
 
-# Candyland
-
-Our version of Candyland is several years old and I realized that cards were missing, and some were starting to rip. Before the deck of cards was too far gone, I decided to create a simple program to recreate the deck of candyland cards, and then I realized with a little more effort, I could replace the entire deck with a script, track whose turn it was, and reshuffle the deck when it was exhausted.
-
-This is a simple and fun example of dynmic list creation, random selection without replacement, updating global variables, and putting it all together into something you can actually use to play a game. Now - drawing a real candyland card from a deck is a lot more tangibly satisfying than clicking a button on your computer, but this approach also saves time for shuffling cards, drawing them and replacing them. 
-
-Considering the simplicity of Candyland for bigger kids, this can make the game into a novelty - we wound up playing "speed Candyland" where winnner would be best of 3 or best of 5. 
-
-Hope you enjoy!
-
-# Neural Net in kdb
+# XOR Neural Net in kdb
 
 I wanted to understand neural nets in more detail, to develop an intuitive understanding of what a neural net actually is and how it works.
+
+I have been working through Nick Psaris' fun Q - https://www.amazon.com/Fun-Functional-Introduction-Machine-Learning/dp/1734467509/ - which is quite an achievement, and I recommend folks check it out. However, for my own learning, I wanted to start with simpler examples of machine learning that used more language primitives - which led me in the direction of creating my own.
 
 Having completed the project, the simplest description I can come up with for a neural net, is a set of formulas that continually update a matrix of weights. The size of the matrix of weights will vary based on the problem being solved. Through repetition, assuming we're on a solvable problem, the weights will hopefully converge to values that allow the network to tease out relationships between inputs and outputs, in essence "predicting" the outcome, without having any specific logic to understand the problem it is solving beyond the weights.
 
@@ -63,6 +55,14 @@ This example relies heavily on kdb matrix multiplication - the "mmu" function. W
 
 https://code.kx.com/q/ref/mmu/
 
-# Least Squares Regression
+# Candyland
+
+Our version of Candyland is several years old and I realized that cards were missing, and some were starting to rip. Before the deck of cards was too far gone, I decided to create a simple program to recreate the deck of candyland cards, and then I realized with a little more effort, I could replace the entire deck with a script, track whose turn it was, and reshuffle the deck when it was exhausted.
+
+This is a simple and fun example of dynmic list creation, random selection without replacement, updating global variables, and putting it all together into something you can actually use to play a game. Now - drawing a real candyland card from a deck is a lot more tangibly satisfying than clicking a button on your computer, but this approach also saves time for shuffling cards, drawing them and replacing them. 
+
+Considering the simplicity of Candyland for bigger kids, this can make the game into a novelty - we wound up playing "speed Candyland" where winnner would be best of 3 or best of 5. 
+
+Hope you enjoy!
 
 
